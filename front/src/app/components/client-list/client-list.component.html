@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h2>Liste des Clients</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Age</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.id}}</td>
+        <td>{{client.nom}}</td>
+        <td>{{client.age}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

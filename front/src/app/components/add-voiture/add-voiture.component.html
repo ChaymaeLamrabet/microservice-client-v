@@ -1,0 +1,35 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card col-12 col-md-8 col-lg-6 p-4 shadow-sm rounded">
+    <h2 class="text-center mb-4">Ajouter une nouvelle voiture</h2>
+    <form [formGroup]="voitureForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Matricule</label>
+        <input type="text" class="form-control" formControlName="matricule" placeholder="Entrez le matricule">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Marque</label>
+        <input type="text" class="form-control" formControlName="marque" placeholder="Entrez la marque">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Modèle</label>
+        <input type="text" class="form-control" formControlName="model" placeholder="Entrez le modèle">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Année</label>
+        <input type="text" class="form-control" formControlName="annee" placeholder="Entrez l'année">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Client</label>
+        <select class="form-control" formControlName="clientId">
+          <option value="">Sélectionner un client</option>
+          <option *ngFor="let client of clients" [value]="client.id">
+            {{client.nom}}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="!voitureForm.valid">
+        Ajouter
+      </button>
+    </form>
+  </div>
+</div>

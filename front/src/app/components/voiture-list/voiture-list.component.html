@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Liste des Voitures</h2>
+  <button class="btn btn-primary mb-3" routerLink="/add-voiture">Ajouter une voiture</button>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Matricule</th>
+        <th>Marque</th>
+        <th>Modèle</th>
+        <th>Année</th>
+        <th>Propriétaire</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let voiture of voitures">
+        <td>{{voiture.matricule}}</td>
+        <td>{{voiture.marque}}</td>
+        <td>{{voiture.model}}</td>
+        <td>{{voiture.annee}}</td>
+        <td>{{voiture.client?.nom}}</td>
+        <td>
+          <button class="btn btn-warning me-2" [routerLink]="['/edit-voiture', voiture.id]">
+            Modifier
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
